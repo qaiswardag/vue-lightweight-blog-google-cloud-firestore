@@ -1,20 +1,21 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link>
-  </div>
   <div class="container">
+    <Navbar></Navbar>
     <router-view></router-view>
   </div>
-  <div class="footer">
-    <div class="copyright">
-      Blog
-    </div>
-  </div>
+
 </template>
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap');
+<script>
+import Navbar from './components/Navbar.vue'
+export default {
+  components: { Navbar },
+}
+</script>
 
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Sacramento&display=swap');
 * {
   padding: 0;
   margin: 0;
@@ -174,8 +175,24 @@ a:active {
 }
 
 /**************************/
-/* NAVIGATION */
+/* HEADER & NAVIGATION */
 /**************************/
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: csenter;
+  margin: 1rem 0 12rem 0;
+  border-bottom: 2px solid #000;
+}
+
+.logo {
+  font-family: 'Sacramento', cursive;
+  display: block;
+  text-align: center;
+  font-size: 8rem;
+  color: brown;
+}
 
 #nav {
   display: flex;
@@ -263,14 +280,27 @@ label {
 input,
 select {
   display: block;
-  padding: 2rem 0 1rem 0;
+  padding: 1.5rem 0 1.5rem 1rem;
   width: 100%;
   box-sizing: border-box;
   border: none;
-  border-bottom: 1px solid #ddd;
+  border: 1px solid #000;
   color: #000;
   font-family: inherit;
 }
+
+textarea {
+  display: block;
+  padding: 2rem 0 1rem 1rem;
+  width: 100%;
+  min-height: 200px;
+  box-sizing: border-box;
+  border: none;
+  border: 1px solid #000;
+  color: #000;
+  font-family: inherit;
+}
+
 input[type='checkbox'] {
   display: inline-block;
   width: 1.6rem;
